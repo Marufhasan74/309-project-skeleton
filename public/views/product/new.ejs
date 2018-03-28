@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>New Article Form</title>
+        <title>New Product Form</title>
     </head>  
     <body>
-        <h1>Create new article</h1>
+        <h1>Create new product</h1>
         <p>Title:</p>
         <input type="text" id="title"/><br/>
         <p>Content</p>
@@ -11,18 +11,22 @@
         <button id="submit">Submit</button>
         <script src="/lib/jquery/dist/jquery.min.js"></script>
         <script>
-        var newArticle = {title:"", content:""};
+        var newProduct = {title:"", content:""};
             $('#submit').click(function(){
                 console.log('submit clicked');
-                newArticle.title= $('#title').val();
-                newArticle.content = $('#content').val();
+                newProduct.title= $('#title').val();
+                newProduct.price= $('#price').val();
+                newProduct.quantity= $('#quantity').val();
+                newProduct.discription = $('#content').val();
                 $.ajax({
                     method: "POST",
-                    url: "/api/articles",
+                    url: "/api/product",
                     data: newArticle
                 }).done(function(response){
                     console.log(response);
+                    window.location.replace('/product/'+response._id);
                 }).fail(function(response){
+                    $('erroe').text(JSON.parse(response.responseText),message);
                     console.log(response.responseText);
                 });
             });

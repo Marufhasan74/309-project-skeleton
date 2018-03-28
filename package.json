@@ -1,5 +1,5 @@
 {
-  "name": "309-project-skeleton",
+  "name": "assignment",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
@@ -35,5 +35,17 @@
     "passport-local": "~1.0.0",
     "passport-twitter": "^1.0.4",
     "q": "^1.4.1"
-  }
+  },
+  "description": "**How to set up the code**",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marufhasan74/309-project-skeleton.git"
+  },
+  "keywords": [
+    "assignment"
+  ],
+  "bugs": {
+    "url": "https://github.com/Marufhasan74/309-project-skeleton/issues"
+  },
+  "homepage": "https://github.com/Marufhasan74/309-project-skeleton#readme"
 }
